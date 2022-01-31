@@ -94,16 +94,16 @@ app.layout = dbc.Container([
 )
 def plot_data(cluster_value, food_group_value):
     # Choose proper dataframe
-    if cluster_value == "kmeans":
+    if cluster_value == "hierarchical":
+        df = df_hierarchical
+        df_group = df_hierarchical_group
+    elif cluster_value == "kmeans":
         df = df_kmeans
         df_group = df_kmeans_group
         df_words = df_words_kmeans
     elif cluster_value == "minibatch_kmeans":
         df = df_minibatch_kmeans
         df_group = df_minibatch_kmeans_group
-    elif cluster_value == "hierarchical":
-        df = df_hierarchical
-        df_group = df_hierarchical_group
     else:
         df = df_dbscan
         df_group = df_dbscan_group
