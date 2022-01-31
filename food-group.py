@@ -82,7 +82,7 @@ def labels_names(df):
             labels_to_names[i] = 'לא סווג'
         df.loc[df['label'] == i, 'labels_names'] = labels_to_names[i]
     df['labels_names'].fillna('לא סווג', inplace=True)
-    print('labels_names - ' df)
+    print('labels_names - ', df)
     return df
 
 __DIRNAME__ = os.path.dirname(os.path.realpath(__file__))
