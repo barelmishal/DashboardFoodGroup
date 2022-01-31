@@ -73,12 +73,12 @@ app.layout = dbc.Container([
         ], width=12)
     ]),
 
-    dbc.Row([
-        dbc.Label('All Words In "name" column'),
-        dbc.Col([
-            html.Div(id='table-words')
-        ], width=12)
-    ]),
+    # dbc.Row([
+    #     dbc.Label('All Words In "name" column'),
+    #     dbc.Col([
+    #         html.Div(id='table-words')
+    #     ], width=12)
+    # ]),
 
 ])
 
@@ -88,7 +88,7 @@ app.layout = dbc.Container([
     Output('scatter-plot', 'figure'),
     Output('table-placeholder', 'children'),
     Output('table-foodgroups', 'children'),
-    Output('table-words', 'children'),
+    # Output('table-words', 'children'),
     Input('cluster-algo', 'value'),
     Input('food-group', 'value')
 )
@@ -133,14 +133,14 @@ def plot_data(cluster_value, food_group_value):
         data=df_group_filtered.to_dict('records'),
     )
 
-    words_table = dash_table.DataTable(
-        id='table3',
-        columns=[{"name": i, "id": i} for i in [str(col) for col in df_words.columns]],
-        data=df_words.to_dict('records'),
-    )
+    # words_table = dash_table.DataTable(
+    #     id='table3',
+    #     columns=[{"name": i, "id": i} for i in [str(col) for col in df_words.columns]],
+    #     data=df_words.to_dict('records'),
+    # )
 
-    return scatter_3d, mytable, group_table, words_table
+    return scatter_3d, mytable, group_table#, words_table
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
