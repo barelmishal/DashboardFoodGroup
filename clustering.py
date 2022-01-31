@@ -1,6 +1,5 @@
 import os
-from turtle import pd
-from typing import Dict
+import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.cluster import AgglomerativeClustering
@@ -105,7 +104,7 @@ def get_matrix_food_group(unique_groups, labels_dict):
     return values
 
 
-def create_table_food_group(df: pd.DataFrame, labels_dict: Dict) -> pd.DataFrame:
+def create_table_food_group(df, labels_dict):
     data_frame = df[['labels_names', 'label']]
     marged_columns = data_frame.apply(tuple, axis=1)
     unique_groups = sorted(marged_columns.unique(), key=lambda x: x[1])

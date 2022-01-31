@@ -1,0 +1,1 @@
+web: gunicorn --graceful-timeout 180 --timeout 180 food-group:server
