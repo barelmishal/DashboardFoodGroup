@@ -1,16 +1,12 @@
 from dash import Dash, html, dcc, Input, Output, dash_table
 import dash_bootstrap_components as dbc
-import numpy as np
 import pandas as pd
 import plotly.express as px
 
 # -------------------------
 
-from optparse import Values
 import os
 from typing import Dict
-import numpy as np
-import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.cluster import MiniBatchKMeans
 from sklearn.cluster import AgglomerativeClustering
