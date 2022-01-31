@@ -76,13 +76,10 @@ def create_graph1(data):
 )
 def create_graph1(data):
     dff = pd.DataFrame(data)
-    # 2. convert string like JSON to pandas dataframe
-    # dff = pd.read_json(data, orient='split')
-    my_table = dash_table.DataTable(
+    return dash_table.DataTable(
         columns=[{"name": i, "id": i} for i in dff.columns],
         data=dff.to_dict('records')
     )
-    return my_table
 
 if __name__ == '__main__':
     app.run_server(debug=True)
